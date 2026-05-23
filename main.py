@@ -6,9 +6,7 @@ import os
 
 app = FastAPI()
 
-@app.on_event("startup")
-def startup_event():
-    init_db()
+# Note: The startup_event block was removed from here to prevent the cloud crash
 
 # Mount the static directory for your CSS styles
 app.mount("/static", StaticFiles(directory="static"), name="static")
